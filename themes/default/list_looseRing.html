@@ -1,0 +1,95 @@
+<!--#include file="head.html"-->
+
+<link rel="stylesheet" href="/assets/css/amazeui.datatables.min.css">
+
+<!--<img src="/assets/image/32.png" alt="{$contentInfo.title}" class="am-img-responsive am-center" />-->
+
+<section class="gallery-ring-list am-padding-vertical-xl">
+    <div class="am-container">
+        <p class="am-margin-top-0 am-margin-bottom-sm am-text-sm"><a href="__ROOT__/">首页</a> &gt; <a href="/list-luozuan.html">裸钻</a></p>
+
+        <article class="category-block am-padding-bottom-xl">
+
+            <ul class="am-avg-sm-2 tab-two">
+                <!--foreach{$condition as $vo}-->
+
+                    <!--foreach{$vo.config as $v}-->
+                    <li <!--if{$v.value == $v.i}--> class="active" <!--{/if}--> >
+                        <a href="{$v.url}">{$v.name} <span class="am-icon-caret-down"></span></a>
+                    </li>
+                    <!--{/foreach}-->
+
+                <!--{/foreach}-->
+
+            </ul>
+
+            <ul class="am-avg-sm-2 am-margin-top-xs am-padding-bottom-lg filter-box">
+
+
+                <!--foreach{$condition as $vo}-->
+                <li>
+                    <span class="category-head">{$vo.name}</span>
+                    <div>
+                        <!--foreach{$vo.config as $v}-->
+                        <p <!--if{$v.value == $v.i}--> class="selected" <!--{/if}--> >
+                            <a href="{$v.url}">{$v.name}</a>
+                        </p>
+                        <!--{/foreach}-->
+                    </div>
+
+                </li>
+                <!--{/foreach}-->
+            </ul>
+
+            <a href="/list-luozuan.html" class="clearChosen am-text-center">清空筛选器</a>
+        </article>
+
+        <div class="loose-ring-block am-padding-top-xl">
+            <!--foreach{$pageList as $vo}-->
+            <p class="ring-block-line ">
+                <span>{$vo.ringShape['list'][$vo.ringShape['value'][0]] }</span>|<span>证书 {$vo.num}</span>|<span>钻重 {$vo.weight}</span>|
+                <span>颜色 {$vo.colorNum}</span>|<span>净度 {$vo.clearNum}</span>|<span>切工 {$vo.cutDegree}</span>|<span>抛光 {$vo.polish}</span>|
+                <span>对称 {$vo.sym}</span>|<span>荧光 {$vo.fluo}</span>|<span class="red">会员价 ¥{$vo.priceNum}</span><a href="{$vo.aurl}">立即查看</a>
+            </p>
+            <!--{/foreach}-->
+
+            <div class="pagination">{$page}</div>
+
+        </div>
+
+
+    </div>
+</section>
+
+<section class="product-ring-interest">
+    <div class="am-container am-padding-bottom-lg">
+        <div class="title-withline"><span>热门推荐</span></div>
+    </div>
+
+    <article class="recommendation-box am-padding-vertical-xl">
+        <div class="am-container">
+            <ul class="am-avg-sm-2 am-padding-bottom-lg">
+               <li class="am-padding-right-sm">
+                   <a href="">
+                       <img src="/assets/image/115.png" alt="{$contentInfo.title}" class="am-img-responsive am-center" />
+                   </a>
+               </li>
+                <li class="am-padding-left-sm">
+                    <a href="">
+                        <img src="/assets/image/116.png" alt="{$contentInfo.title}" class="am-img-responsive am-center" />
+                    </a>
+                </li>
+            </ul>
+
+            <a href="">
+                <img src="/assets/image/117.png" alt="{$contentInfo.title}" class="am-img-responsive am-center" />
+            </a>
+
+        </div>
+    </article>
+
+</section>
+
+<!--#include file="three_boxes.html"-->
+
+<!--#include file="foot.html"-->

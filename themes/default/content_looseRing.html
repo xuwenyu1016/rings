@@ -1,0 +1,124 @@
+<!--#include file="head.html"-->
+
+<section class="product-ring-block am-padding-vertical-xl">
+    <div class="am-container">
+        <p class="am-margin-top-0 am-margin-bottom-sm am-text-sm"><a href="__ROOT__/">首页</a><!--foreach{$crumb as $vo}--> &gt; <a href="{$vo.url}">{$vo.name}</a><!--{/foreach}--> &gt; <a>{$contentInfo.title}</a></p>
+
+        <ul class="am-avg-sm-2 am-margin-top-lg ring-container">
+            <li class="am-padding-right-sm">
+                <div data-am-widget="slider" class="am-slider am-slider-d3" data-am-slider='{"controlNav":"thumbnails","directionNav":false}' >
+                    <ul class="am-slides">
+                        <li data-thumb="{$contentInfo.image}">
+                            <img src="{$contentInfo.image}">
+                        </li>
+                        <li data-thumb="{$contentInfo.productImg2}">
+                            <img src="{$contentInfo.productImg2}">
+                        </li>
+                        <li data-thumb="{$contentInfo.productImg3}">
+                            <img src="{$contentInfo.productImg3}">
+                        </li>
+                        <li data-thumb="{$contentInfo.productImg4}">
+                            <img src="{$contentInfo.productImg4}">
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="am-padding-left-sm">
+                <article class="am-padding-left-sm">
+                    <h2>{$contentInfo.title}</h2>
+                    <p class="price am-margin-vertical-xs am-padding-bottom-sm am-text-xl border-bottom">¥{$contentInfo.priceNum}   <a class="am-text-sm" href="/list-luozuan.html">查看更多裸钻 >></a></p>
+
+                    <ul class="am-avg-sm-2 am-padding-vertical-sm border-bottom am-padding-left-xs">
+                        <li class="am-margin-vertical-xs">证书：{$contentInfo.num}</li>
+                        <li class="am-margin-vertical-xs">钻重：{$contentInfo.weight}</li>
+                        <li class="am-margin-vertical-xs">颜色：{$contentInfo.colorNum}</li>
+                        <li class="am-margin-vertical-xs">净度：{$contentInfo.clearNum}</li>
+
+                        <li class="am-margin-vertical-xs"><span class="smWidth">切工：</span><span>{$contentInfo.cutDegree}</span></li>
+                        <li class="am-margin-vertical-xs"><span class="smWidth">抛光：</span><span>{$contentInfo.polish}</span></li>
+                        <li class="am-margin-vertical-xs"><span class="smWidth">对称：</span><span>{$contentInfo.sym}</span></li>
+                        <li class="am-margin-vertical-xs"><span class="smWidth">荧光：</span><span>{$contentInfo.fluo}</span></li>
+                        <li class="am-margin-vertical-xs"><span class="smWidth">形状：</span><span>{$contentInfo.ringShape['list'][$contentInfo.ringShape['value'][0]] }</span></li>
+                        <li class="am-margin-vertical-xs">&nbsp;</li>
+                        <li class="am-margin-vertical-xs">&nbsp;</li>
+                        <li class="am-margin-botttom-xs am-margin-top-lg">
+                            <!--if{ $contentInfo.categoryName['list'][$contentInfo.categoryName['value'][0]] ==  'GIA'  }-->
+                            <img src="/assets/image/122.png" class="am-img-responsive am-fr">
+                            <!--{else}-->
+                            <img src="/assets/image/123.png" class="am-img-responsive am-fr">
+                            <!--{/if}-->
+                        </li>
+                    </ul>
+
+                    <div class="button-box">
+                        <ul class="am-avg-sm-2 am-padding-vertical-sm ">
+                            <li><button class="am-margin-vertical-xs" data-am-modal="{target: '#doc-modal-1', closeViaDimmer: 0, width: 600, height: 700}">预约试戴</button></li>
+                            <li><a class="am-margin-vertical-xs" href="">在线咨询</a></li>
+                        </ul>
+
+                        <!--<a href="" class="purchase">立即购买</a>-->
+
+                        <!--<p class="am-margin-vertical-sm am-padding-top-sm am-padding-left-xs">服务：&emsp;自提/免费提货/免运费/现贷全额支付立即发货</p>-->
+                    </div>
+
+                </article>
+
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="product-ring-interest">
+    <div class="am-container">
+        <div class="title-withline"><span>你可能感兴趣的产品</span></div>
+    </div>
+
+    <div class="grey-block transparent am-padding-vertical-lg">
+        <div class="am-container">
+            <div class="loose-ring-block">
+                <!--list{app="Article" label="contentList" class_id=9 expand_id=4 limit="10" order="views desc"   }-->
+                <p class="ring-block-line ">
+                    <span>{$contentInfo.ringShape['list'][$contentInfo.ringShape['value'][0]] }</span>|<span>证书 {$list.num}</span>|<span>钻重 {$list.weight}</span>|
+                    <span>颜色 {$list.colorNum}</span>|<span>净度 {$list.clearNum}</span>|<span>切工 {$list.cutDegree}</span>|<span>抛光 {$list.polish}</span>|
+                    <span>对称 {$list.sym}</span>|<span>荧光 {$list.fluo}</span>|<span class="red">会员价 ¥{$list.priceNum}</span><a href="{$list.aurl}">立即查看</a>
+                </p>
+                <!--{/list}-->
+
+            </div>
+            <a href="/list-jiezhi.html" class="am-center am-margin-top-xl"> 查看更多 >> </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="product-ring-interest">
+    <div class="am-container am-padding-bottom-sm">
+        <div class="title-withline"><span>热门推荐</span></div>
+    </div>
+
+    <article class="recommendation-box am-padding-vertical-xl">
+        <div class="am-container">
+            <ul class="am-avg-sm-2 am-padding-bottom-lg">
+                <li class="am-padding-right-sm">
+                    <a href="">
+                        <img src="/assets/image/115.png" alt="{$contentInfo.title}" class="am-img-responsive am-center" />
+                    </a>
+                </li>
+                <li class="am-padding-left-sm">
+                    <a href="">
+                        <img src="/assets/image/116.png" alt="{$contentInfo.title}" class="am-img-responsive am-center" />
+                    </a>
+                </li>
+            </ul>
+
+            <a href="">
+                <img src="/assets/image/117.png" alt="{$contentInfo.title}" class="am-img-responsive am-center" />
+            </a>
+
+        </div>
+    </article>
+
+</section>
+
+
+<!--#include file="foot.html"-->

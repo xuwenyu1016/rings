@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
+
+#RewriteCond %{HTTP_HOST} ^beonly520.cn [NC]
+#RewriteRule ^(.*)$ http://www.beonly520.cn/$1 [L,R=301]
+#
+RewriteCond %{HTTP_HOST} ^beonly520.com [NC]
+RewriteRule ^(.*)$ http://www.beonly520.com/$1 [L,R=301]
+
+</IfModule>
+
+

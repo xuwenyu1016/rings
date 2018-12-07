@@ -1,0 +1,147 @@
+<!--#include file="head.html"-->
+
+<link rel="stylesheet" href="/assets/css/amazeui.datatables.min.css">
+
+<!--<img src="/assets/image/32.png" alt="{$contentInfo.title}" class="am-img-responsive am-center" />-->
+
+<section class="class-list am-padding-top-xl">
+    <div class="am-container">
+        <p class="am-margin-top-0 am-margin-bottom-sm am-text-sm"><a href="__ROOT__/">首页</a> <!--foreach{$crumb as $vo}--> &gt; <a href="{$vo.url}">{$vo.name}</a><!--{/foreach}--></p>
+
+        <div class="class-container">
+            <article class="class-body am-padding-sm">
+                <div class="nav-links">
+                    <!--foreach{$condition as $vo}-->
+
+                    <a href="{$vo.url}" class="select-all <!--if{$vo.value==="all"}-->  selected <!--{/if}--> ">全部文章</a>
+                    <!--foreach{$vo.config as $v}-->
+
+
+                    <a <!--if{$v.value == $v.i}--> class="selected" <!--{/if}--> href="{$v.url}">{$v.name}</a>
+
+                    <!--{/foreach}-->
+
+                    <!--{/foreach}-->
+                </div>
+
+                <div class="news-container">
+                    <!--foreach{$pageList as $vo}-->
+                    <a href="{$vo.aurl}" class="news-box am-padding-vertical-sm">
+                        <img src="{$vo.image}" alt="{$vo.title}" class="am-img-responsive" />
+
+                        <div class="news-content am-padding-left-sm">
+                            <p class="am-text-truncate am-margin-vertical-xs">{$vo.title}</p>
+                            <p class="am-margin-vertical-xs am-text-sm">{$vo.description}</p>
+
+                            <span>阅读全文 >> </span>
+                        </div>
+                    </a>
+                    <!--{/foreach}-->
+                </div>
+
+                <div class="pagination">{$page}</div>
+
+
+            </article>
+
+            <article class="class-suggest am-padding-left-sm">
+                <div class="am-tabs" data-am-tabs>
+                    <ul class="am-tabs-nav am-nav am-nav-tabs">
+                        <li class="am-active"><a href="#tab1">近期文章</a></li>
+                        <li><a href="#tab2">热门推荐</a></li>
+
+                    </ul>
+
+                    <div class="am-tabs-bd">
+                        <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+                            <!--if{ $categoryInfo['name'] ==  '钻石课堂'  }-->
+                            <!--list{app="DuxCms" label="contentList" class_id="12" sub=true limit=5 order="time desc"}-->
+                            <a href="{$list.aurl}">
+                                <p class="am-margin-vertical-xs am-text-truncate am-text-sm">{$list.title}</p>
+                                <p class="am-margin-vertical-xs am-text-xs">{$list.description}</p>
+                            </a>
+                            <!--{/list}-->
+                            <!--{/if}-->
+
+                            <!--if{ $categoryInfo['name'] ==  '戒指课堂'  }-->
+                            <!--list{app="DuxCms" label="contentList" class_id="15" sub=true limit=5 order="time desc"}-->
+                            <a href="{$list.aurl}">
+                                <p class="am-margin-vertical-xs am-text-truncate am-text-sm">{$list.title}</p>
+                                <p class="am-margin-vertical-xs am-text-xs">{$list.description}</p>
+                            </a>
+                            <!--{/list}-->
+                            <!--{/if}-->
+
+                            <!--if{ $categoryInfo['name'] ==  '珠宝课堂'  }-->
+                            <!--list{app="DuxCms" label="contentList" class_id="16" sub=true limit=5 order="time desc"}-->
+                            <a href="{$list.aurl}">
+                                <p class="am-margin-vertical-xs am-text-truncate am-text-sm">{$list.title}</p>
+                                <p class="am-margin-vertical-xs am-text-xs">{$list.description}</p>
+                            </a>
+                            <!--{/list}-->
+                            <!--{/if}-->
+
+                            <!--if{ $categoryInfo['name'] ==  '结婚百科'  }-->
+                            <!--list{app="DuxCms" label="contentList" class_id="17" sub=true limit=5 order="time desc"}-->
+                            <a href="{$list.aurl}">
+                                <p class="am-margin-vertical-xs am-text-truncate am-text-sm">{$list.title}</p>
+                                <p class="am-margin-vertical-xs am-text-xs">{$list.description}</p>
+                            </a>
+                            <!--{/list}-->
+                            <!--{/if}-->
+
+                        </div>
+                        <div class="am-tab-panel am-fade" id="tab2">
+
+                            <!--if{ $categoryInfo['name'] ==  '钻石课堂'  }-->
+                            <!--list{app="DuxCms" label="contentList" class_id="12" sub=true limit=5 order="views desc"}-->
+                            <a href="{$list.aurl}">
+                                <p class="am-margin-vertical-xs am-text-truncate am-text-sm">{$list.title}</p>
+                                <p class="am-margin-vertical-xs am-text-xs">{$list.description}</p>
+                            </a>
+                            <!--{/list}-->
+                            <!--{/if}-->
+
+                            <!--if{ $categoryInfo['name'] ==  '戒指课堂'  }-->
+                            <!--list{app="DuxCms" label="contentList" class_id="15" sub=true limit=5 order="views desc"}-->
+                            <a href="{$list.aurl}">
+                                <p class="am-margin-vertical-xs am-text-truncate am-text-sm">{$list.title}</p>
+                                <p class="am-margin-vertical-xs am-text-xs">{$list.description}</p>
+                            </a>
+                            <!--{/list}-->
+                            <!--{/if}-->
+
+                            <!--if{ $categoryInfo['name'] ==  '珠宝课堂'  }-->
+                            <!--list{app="DuxCms" label="contentList" class_id="16" sub=true limit=5 order="views desc"}-->
+                            <a href="{$list.aurl}">
+                                <p class="am-margin-vertical-xs am-text-truncate am-text-sm">{$list.title}</p>
+                                <p class="am-margin-vertical-xs am-text-xs">{$list.description}</p>
+                            </a>
+                            <!--{/list}-->
+                            <!--{/if}-->
+
+                            <!--if{ $categoryInfo['name'] ==  '结婚百科'  }-->
+                            <!--list{app="DuxCms" label="contentList" class_id="17" sub=true limit=5 order="views desc"}-->
+                            <a href="{$list.aurl}">
+                                <p class="am-margin-vertical-xs am-text-truncate am-text-sm">{$list.title}</p>
+                                <p class="am-margin-vertical-xs am-text-xs">{$list.description}</p>
+                            </a>
+                            <!--{/list}-->
+                            <!--{/if}-->
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+<!--#include file="three_boxes.html"-->
+
+<!--#include file="foot.html"-->
+

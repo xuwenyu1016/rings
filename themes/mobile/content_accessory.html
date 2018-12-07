@@ -1,0 +1,132 @@
+
+<!--#include file="head.html"-->
+
+<!--#include file="header.html"-->
+
+<div class="am-tabs product-tab" data-am-tabs="{noSwipe: 1}">
+    <ul class="am-tabs-nav am-nav am-nav-tabs am-avg-sm-2">
+        <li class="am-active"><a href="#tab1">商品</a></li>
+        <li><a href="#tab2">详情</a></li>
+    </ul>
+
+    <div class="am-tabs-bd">
+        <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+            <div data-am-widget="slider" class="am-slider am-slider-a2" data-am-slider='{"directionNav":false}'>
+                <ul class="am-slides">
+                    <li data-thumb="{$contentInfo.image}">
+                        <img src="{$contentInfo.image}">
+                    </li>
+                    <li data-thumb="{$contentInfo.productImg2}">
+                        <img src="{$contentInfo.productImg2}">
+                    </li>
+                    <li data-thumb="{$contentInfo.productImg3}">
+                        <img src="{$contentInfo.productImg3}">
+                    </li>
+                    <li data-thumb="{$contentInfo.productImg4}">
+                        <img src="{$contentInfo.productImg4}">
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="grey" />
+
+            <article class="am-padding-horizontal-sm">
+
+                <p class="am-margin-vertical-xs"><b>{$contentInfo.title}</b></p>
+
+                <p class="am-margin-vertical-xs grey">¥{$contentInfo.price}</p>
+
+                <ul class="am-avg-sm-2 border-bottom am-text-xs am-padding-bottom-xs">
+                    <li class="am-margin-vertical-xs">主钻重量：{$contentInfo.mainWeight}</li>
+                    <li class="am-margin-vertical-xs">钻石颜色：{$contentInfo.ringColor}</li>
+                    <li class="am-margin-vertical-xs">钻石净度：{$contentInfo.clarity}</li>
+                    <li class="am-margin-vertical-xs">钻石切工：{$contentInfo.cut}</li>
+                </ul>
+
+                <ul class="am-avg-sm-2 am-text-xs am-padding-vertical-xs">
+                    <li class="am-margin-vertical-xs"><span>品名：</span><span>{$contentInfo.tradeName}</span></li>
+                    <li class="am-margin-vertical-xs"><span>材质：</span><span>{$contentInfo.diamondMaterial}</span></li>
+                    <li class="am-margin-vertical-xs"><span>颜色：</span><span>{$contentInfo.color}</span></li>
+                    <li class="am-margin-vertical-xs"><span>手指尺寸：</span><span>{$contentInfo.fingerSize}</span></li>
+                    <li class="am-margin-vertical-xs"><span>钻石：</span><span>{$contentInfo.diamondType}</span></li>
+                </ul>
+
+            </article>
+
+        </div>
+
+        <div class="am-tab-panel am-fade" id="tab2">
+
+            <ul class="am-avg-sm-2 border-bottom am-text-xs am-padding-vertical-xs am-padding-horizontal-sm">
+                <li><p class="am-margin-vertical-xs"><span>货号：</span><span>{$contentInfo.commodity}</span></p></li>
+                <li><p class="am-margin-vertical-xs"><span>材质：</span><span>{$contentInfo.diamondMaterial}</span></p></li>
+                <!--<li><p class="am-margin-vertical-xs"><span>手寸：</span><span>{$contentInfo.fingerSize}</span></p></li>-->
+                <li><p class="am-margin-vertical-xs"><span>证书：</span><span>{$contentInfo.paper}</span></p></li>
+                <li><p class="am-margin-vertical-xs"><span>主钻重量：</span><span>{$contentInfo.mainWeight}</span></p></li>
+                <li><p class="am-margin-vertical-xs"><span>副钻重量：</span><span>{$contentInfo.subWeight}</span></p></li>
+                <li><p class="am-margin-vertical-xs"><span>副石形状：</span><span>{$contentInfo.subshape}</span></p></li>
+                <li><p class="am-margin-vertical-xs"><span>颜色：</span><span>{$contentInfo.color}</span></p></li>
+                <li><p class="am-margin-vertical-xs"><span>净度：</span><span>{$contentInfo.clarity}</span></p></li>
+                <li><p class="am-margin-vertical-xs"><span>切工：</span><span>{$contentInfo.cut}</span></p></li>
+
+                <li><p class="am-margin-vertical-xs"><span>抛光：</span><span>{$contentInfo.polish}</span></p></li>
+
+                <li><p class="am-margin-vertical-xs"><span>对称：</span><span>{$contentInfo.sym}</span></p></li>
+
+                <li><p class="am-margin-vertical-xs"><span>荧光：</span><span>{$contentInfo.fluo}</span></p></li>
+            </ul>
+
+            <p class="am-text-center am-margin-vertical-sm active">商品细节展示</p>
+
+            <img src="{$contentInfo.detailshow}" class="am-img-responsive am-center" alt="{$contentInfo.title}" />
+
+            <p class="am-text-center am-margin-vertical-sm active">商品佩戴效果</p>
+
+            <img src="{$contentInfo.dressedImage}" class="am-img-responsive am-center am-margin-bottom-sm" alt="{$contentInfo.title}" />
+
+        </div>
+    </div>
+</div>
+
+<hr class="grey" />
+
+<section class="product-ring-interest am-padding-top-sm">
+
+    <div class="title-withline"><span>你可能感兴趣的产品</span></div>
+
+
+    <div class="grey-block am-padding-vertical-sm">
+        <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{"animation":"slide","animationLoop":false,"itemWidth":200,"itemMargin":5,minItems: 2,maxItems: 2,directionNav: false}'>
+            <ul class="am-slides">
+
+                <!--list{app="Article" label="contentList" class_id=8 expand_id=3 limit="3" order="views desc"   }-->
+                <li>
+                    <article class="">
+                        <a href="{$list.aurl}">
+                            <img src="{$list.image}" class="am-img-responsive am-center" width="250" alt="{$list.title}" />
+
+                            <p class="am-margin-top-xs am-margin-bottom-0 am-text-center am-text-truncate am-text-sm">{$list.title}</p>
+                            <p class="am-margin-top-0 am-margin-bottom-xs am-text-center grey am-text-sm">¥{$list.price}</p>
+                        </a>
+
+                    </article>
+                </li>
+                <!--{/list}-->
+
+            </ul>
+        </div>
+
+
+        <a href="/list-jiezhi.html" class="am-center am-margin-top-sm more-products"> 查看更多 >> </a>
+
+
+    </div>
+</section>
+
+<hr class="grey" />
+
+<!--#include file="three_boxes.html"-->
+
+<!--#include file="footer.html"-->
+
+<!--#include file="foot.html"-->

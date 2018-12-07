@@ -1,0 +1,147 @@
+
+<!--#include file="head.html"-->
+
+<!--#include file="header.html"-->
+
+<section class="am-padding-sm looseRing-filter">
+
+    <p class="am-margin-top-0 am-margin-bottom-sm am-text-xs"><a href="__ROOT__/">首页</a><!--foreach{$crumb as $vo}--> &gt; <a href="{$vo.url}">{$vo.name}</a><!--{/foreach}--></p>
+
+
+    <ul class="am-avg-sm-3 tab-two">
+        <!--foreach{$condition as $vo}-->
+
+        <!--foreach{$vo.config as $v}-->
+        <li <!--if{$v.value == $v.i}--> class="active" <!--{/if}--> >
+        <a href="{$v.url}">{$v.name} <span class="am-icon-caret-down"></span></a>
+        </li>
+        <!--{/foreach}-->
+
+        <!--{/foreach}-->
+
+        <li>
+            <a href="#doc-oc-demo-filter" data-am-offcanvas>高级筛选</a>
+
+            <!-- 侧边栏内容 -->
+            <div id="doc-oc-demo-filter" class="am-offcanvas">
+                <div class="am-offcanvas-bar am-offcanvas-bar-flip">
+                    <div class="am-offcanvas-content">
+
+                        <p class="filter-header">高级筛选</p>
+
+                        <!--foreach{$condition as $vo}-->
+                        <article>
+                            <span class="category-head">{$vo.name}</span>
+                            <ul class="am-avg-sm-3">
+                                <li>
+                                    <p class="select-all <!--if{$vo.value==="all"}-->  selected <!--{/if}--> ">
+                                    <a>全部</a>
+                                    </p>
+                                </li>
+
+
+                                <!--foreach{$vo.config as $v}-->
+                                <li>
+                                    <p <!--if{$v.value == $v.i}--> class="selected" <!--{/if}--> >
+                                    <a>{$v.name}</a>
+                                    </p>
+                                </li>
+
+                                <!--{/foreach}-->
+
+
+                            </ul>
+
+                        </article>
+                        <!--{/foreach}-->
+
+
+                        <div class="last-line-text">
+                            <a href="" class="go" id="looseRingGoLink">GO! 点击前往</a>
+                            <a href="/list-peishi.html" class="clear-filter">清除筛选</a>
+
+                        </div>
+
+                        <div class="close-filter">Close</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+</section>
+
+<hr class="grey" />
+
+<section class="ring-lists am-padding-sm">
+    <ul class="am-avg-sm-2">
+        <!--foreach{$pageList as $vo}-->
+        <li class="am-padding-xs">
+            <article>
+                <a href="{$vo.aurl}">
+                    <img src="{$vo.image}" class="am-img-responsive am-center" width="200" alt="{$vo.title}" />
+                    <p class="am-margin-vertical-xs am-text-xs price am-text-center"><b>¥{$vo.price}</b></p>
+                    <p class="am-margin-vertical-xs am-text-xs am-text-truncate am-text-center"><b>{$vo.title}</b></p>
+                </a>
+            </article>
+        </li>
+        <!--{/foreach}-->
+    </ul>
+
+    <div class="pagination">{$page}</div>
+</section>
+
+<!--#include file="footer.html"-->
+
+<!--#include file="foot.html"-->
+
+<script>
+    $(document).ready(function(){
+
+
+        $filterLink = $("#doc-oc-demo-filter article p");
+
+
+        $filterLink.click(function(){
+            $(this).addClass("selected");
+            $(this).parent().siblings().children().removeClass("selected");
+
+//            console.log($(this).parent().index() + 1);
+
+            $firstNum = (parseInt($("#doc-oc-demo-filter article:nth-child(2) .selected").parent().index())  === 0)?"all":parseInt($("#doc-oc-demo-filter article:nth-child(2) .selected").parent().index()) ;
+            $SecNum = (parseInt($("#doc-oc-demo-filter article:nth-child(3) .selected").parent().index())  === 0)?"all":parseInt($("#doc-oc-demo-filter article:nth-child(3) .selected").parent().index()) ;
+            $ThirdNum = (parseInt($("#doc-oc-demo-filter article:nth-child(4) .selected").parent().index())  === 0)?"all":parseInt($("#doc-oc-demo-filter article:nth-child(4) .selected").parent().index()) ;
+            $FourNum = (parseInt($("#doc-oc-demo-filter article:nth-child(5) .selected").parent().index())  === 0)?"all":parseInt($("#doc-oc-demo-filter article:nth-child(5) .selected").parent().index()) ;
+            $FivNum = (parseInt($("#doc-oc-demo-filter article:nth-child(6) .selected").parent().index())  === 0)?"all":parseInt($("#doc-oc-demo-filter article:nth-child(6) .selected").parent().index()) ;
+            $SixNum = (parseInt($("#doc-oc-demo-filter article:nth-child(7) .selected").parent().index())  === 0)?"all":parseInt($("#doc-oc-demo-filter article:nth-child(7) .selected").parent().index()) ;
+            $SevNum = (parseInt($("#doc-oc-demo-filter article:nth-child(8) .selected").parent().index())  === 0)?"all":parseInt($("#doc-oc-demo-filter article:nth-child(8) .selected").parent().index()) ;
+            $EigNum = (parseInt($("#doc-oc-demo-filter article:nth-child(9) .selected").parent().index())  === 0)?"all":parseInt($("#doc-oc-demo-filter article:nth-child(9) .selected").parent().index()) ;
+            $NinNum = (parseInt($("#doc-oc-demo-filter article:nth-child(10) .selected").parent().index())  === 0)?"all":parseInt($("#doc-oc-demo-filter article:nth-child(10) .selected").parent().index());
+
+
+            console.log($firstNum);
+
+
+
+            if($(".tab-two li:nth-child(1)").hasClass("active")){
+                console.log("/peishi/select/series-1_categoryName-" + $firstNum + "_ringWeight-" + $SecNum + "_material-" + $ThirdNum + "_ringPrice-" + $FourNum + ".html");
+                $('#looseRingGoLink').attr('href',"/peishi/select/series-1_categoryName-" + $firstNum + "_ringWeight-" + $SecNum + "_material-" + $ThirdNum + "_ringPrice-" + $FourNum + ".html");
+
+            }else if($(".tab-two li:nth-child(2)").hasClass("active")){
+                console.log("/peishi/select/series-2_categoryName-" + $firstNum + "_ringWeight-" + $SecNum + "_material-" + $ThirdNum + "_ringPrice-" + $FourNum + ".html");
+                $('#looseRingGoLink').attr('href',"/peishi/select/series-2_categoryName-" + $firstNum + "_ringWeight-" + $SecNum + "_material-" + $ThirdNum + "_ringPrice-" + $FourNum + ".html");
+
+
+            }else{
+                console.log("/peishi/select/series-all_categoryName-" + $firstNum + "_ringWeight-" + $SecNum + "_material-" + $ThirdNum + "_ringPrice-" + $FourNum + ".html");
+                $('#looseRingGoLink').attr('href',"/peishi/select/series-all_categoryName-" + $firstNum + "_ringWeight-" + $SecNum + "_material-" + $ThirdNum + "_ringPrice-" + $FourNum + ".html");
+
+
+            }
+
+        });
+
+
+    })
+</script>

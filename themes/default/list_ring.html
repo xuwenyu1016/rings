@@ -1,0 +1,57 @@
+<!--#include file="head.html"-->
+
+<!--<img src="/assets/image/32.png" alt="{$contentInfo.title}" class="am-img-responsive am-center" />-->
+
+<section class="gallery-ring-list am-padding-top-xl">
+    <div class="am-container">
+        <p class="am-margin-top-0 am-margin-bottom-sm am-text-sm"><a href="__ROOT__/">首页</a><!--foreach{$crumb as $vo}--> &gt; <a href="{$vo.url}">{$vo.name}</a><!--{/foreach}--></p>
+
+        <article class="category-line">
+            <ul class="am-avg-sm-6 am-margin-top-xs product-category">
+                <!--foreach{$condition as $vo}-->
+                <li>
+                    <div class="category-list-title">{$vo.name} <span class="am-icon-angle-down"></span></div>
+
+                    <ul class="product-dropdown am-avg-sm-5">
+                        <li class="select-all <!--if{$vo.value==="all"}-->  selected <!--{/if}--> ">
+                        <a href="{$vo.url}"> - 全部</a>
+                        </li>
+                        <!--foreach{$vo.config as $v}-->
+                        <li <!--if{$v.value == $v.i}--> class="selected" <!--{/if}--> >
+                        <a href="{$v.url}"> - {$v.name}</a>
+                        </li>
+                        <!--{/foreach}-->
+
+                    </ul>
+
+                </li>
+                <!--{/foreach}-->
+            </ul>
+
+            <a href="/list-jiezhi.html" class="">清空筛选</a>
+        </article>
+
+
+        <ul class="am-avg-sm-4 am-padding-horizontal-sm product-list">
+            <!--foreach{$pageList as $vo}-->
+            <li class="am-padding-xs">
+                <article>
+                    <a href="{$vo.aurl}">
+                        <img src="{$vo.image}" class="am-img-responsive am-center" width="250" alt="{$vo.title}" />
+                        <p class="am-margin-vertical-xs price"><b>¥{$vo.price}</b></p>
+                        <p class="am-margin-vertical-xs am-text-truncate"><b>{$vo.title}</b></p>
+                        <p class="am-margin-vertical-xs show-detail am-center am-text-sm"><b>查看详情</b></p>
+                    </a>
+                </article>
+            </li>
+            <!--{/foreach}-->
+        </ul>
+
+        <div class="pagination">{$page}</div>
+
+    </div>
+</section>
+
+<!--#include file="three_boxes.html"-->
+
+<!--#include file="foot.html"-->

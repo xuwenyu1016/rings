@@ -1,0 +1,130 @@
+<!--#include file="head.html"-->
+
+<section class="product-ring-block am-padding-vertical-xl">
+    <div class="am-container">
+        <p class="am-margin-top-0 am-margin-bottom-sm am-text-sm"><a href="__ROOT__/">首页</a><!--foreach{$crumb as $vo}--> &gt; <a href="{$vo.url}">{$vo.name}</a><!--{/foreach}--> &gt; <a>{$contentInfo.title}</a></p>
+
+        <ul class="am-avg-sm-2 am-margin-top-lg ring-container">
+            <li class="am-padding-right-sm">
+                <div data-am-widget="slider" class="am-slider am-slider-d3" data-am-slider='{"controlNav":"thumbnails","directionNav":false}' >
+                    <ul class="am-slides">
+                        <li data-thumb="{$contentInfo.image}">
+                            <img src="{$contentInfo.image}">
+                        </li>
+                        <li data-thumb="{$contentInfo.productImg2}">
+                            <img src="{$contentInfo.productImg2}">
+                        </li>
+                        <li data-thumb="{$contentInfo.productImg3}">
+                            <img src="{$contentInfo.productImg3}">
+                        </li>
+                        <li data-thumb="{$contentInfo.productImg4}">
+                            <img src="{$contentInfo.productImg4}">
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="am-padding-left-sm">
+                <article class="am-padding-left-sm">
+                    <h2>{$contentInfo.title}</h2>
+                    <p class="price am-margin-vertical-xs am-padding-bottom-sm am-text-xl border-bottom">¥{$contentInfo.price}   <a class="am-text-sm" href="/list-peishi.html">查看更多配饰 >></a></p>
+
+                    <ul class="am-avg-sm-2 am-padding-vertical-sm border-bottom am-padding-left-xs">
+                        <li class="am-margin-vertical-xs">主钻重量：{$contentInfo.mainWeight}</li>
+                        <li class="am-margin-vertical-xs">钻石颜色：{$contentInfo.ringColor}</li>
+                        <li class="am-margin-vertical-xs">钻石净度：{$contentInfo.clarity}</li>
+                        <li class="am-margin-vertical-xs">钻石切工：{$contentInfo.cut}</li>
+                    </ul>
+
+                    <div class="detail-info border-bottom am-padding-vertical-sm am-padding-left-xs">
+                        <p class="am-margin-vertical-xs"><span>品名：</span><span>{$contentInfo.tradeName}</span></p>
+                        <p class="am-margin-vertical-xs"><span>材质：</span><span>{$contentInfo.diamondMaterial}</span></p>
+                        <p class="am-margin-vertical-xs"><span>颜色：</span><span>{$contentInfo.color}</span></p>
+                        <p class="am-margin-vertical-xs"><span>尺寸：</span><span>{$contentInfo.size}</span></p>
+                        <p class="am-margin-vertical-xs"><span>钻石：</span><span>{$contentInfo.diamondType}</span></p>
+
+
+                    </div>
+
+                    <div class="button-box">
+                        <ul class="am-avg-sm-2 am-padding-vertical-sm ">
+                            <li><button class="am-margin-vertical-xs" data-am-modal="{target: '#doc-modal-1', closeViaDimmer: 0, width: 600, height: 700}">预约试戴</button></li>
+                            <li><a class="am-margin-vertical-xs" href="">在线咨询</a></li>
+                        </ul>
+
+                        <!--<a href="" class="purchase">立即购买</a>-->
+
+                        <!--<p class="am-margin-vertical-sm am-padding-top-sm am-padding-left-xs">服务：&emsp;自提/免费提货/免运费/现贷全额支付立即发货</p>-->
+                    </div>
+
+                </article>
+
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="product-ring-interest">
+    <div class="am-container">
+        <div class="title-withline"><span>你可能感兴趣的产品</span></div>
+    </div>
+
+    <div class="grey-block am-padding-vertical-xl">
+        <div class="am-container">
+            <ul class="am-avg-sm-3">
+                <!--list{app="Article" label="contentList" class_id=8 expand_id=3 limit="3" order="views desc"   }-->
+                <li>
+                    <article class="am-padding-lg">
+                        <a href="{$list.aurl}">
+                            <img src="{$list.image}" class="am-img-responsive am-center" width="250" alt="{$list.title}" />
+
+                            <p class="am-margin-top-xs am-margin-bottom-0 am-text-center am-text-truncate">{$list.title}</p>
+                            <p class="am-margin-top-0 am-margin-bottom-xs am-text-center">¥{$list.price}</p>
+                        </a>
+
+                    </article>
+                </li>
+                <!--{/list}-->
+            </ul>
+
+            <a href="/list-jiezhi.html" class="am-center am-margin-top-xl"> 查看更多 >> </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="product-ring-details am-padding-vertical-xl">
+    <div class="am-container">
+        <h2 class="am-text-center border-bottom active">产品详情</h2>
+
+        <ul class="am-avg-sm-3 am-margin-vertical-lg">
+            <li><p class="am-margin-vertical-xs"><span>货号：</span><span>{$contentInfo.commodity}</span></p></li>
+            <li><p class="am-margin-vertical-xs"><span>材质：</span><span>{$contentInfo.diamondMaterial}</span></p></li>
+            <!--<li><p class="am-margin-vertical-xs"><span>手寸：</span><span>{$contentInfo.fingerSize}</span></p></li>-->
+            <li><p class="am-margin-vertical-xs"><span>证书：</span><span>{$contentInfo.paper}</span></p></li>
+            <li><p class="am-margin-vertical-xs"><span>主钻重量：</span><span>{$contentInfo.mainWeight}</span></p></li>
+            <li><p class="am-margin-vertical-xs"><span>副钻重量：</span><span>{$contentInfo.subWeight}</span></p></li>
+            <li><p class="am-margin-vertical-xs"><span>副石形状：</span><span>{$contentInfo.subshape}</span></p></li>
+            <li><p class="am-margin-vertical-xs"><span>颜色：</span><span>{$contentInfo.color}</span></p></li>
+            <li><p class="am-margin-vertical-xs"><span>净度：</span><span>{$contentInfo.clarity}</span></p></li>
+            <li><p class="am-margin-vertical-xs"><span>切工：</span><span>{$contentInfo.cut}</span></p></li>
+
+            <li><p class="am-margin-vertical-xs"><span>抛光：</span><span>{$contentInfo.polish}</span></p></li>
+
+            <li><p class="am-margin-vertical-xs"><span>对称：</span><span>{$contentInfo.sym}</span></p></li>
+
+            <li><p class="am-margin-vertical-xs"><span>荧光：</span><span>{$contentInfo.fluo}</span></p></li>
+        </ul>
+
+        <h2 class="am-text-center am-padding-bottom-sm active">商品细节展示</h2>
+
+        <img src="{$contentInfo.detailshow}" class="am-img-responsive am-center" alt="{$contentInfo.title}" />
+
+        <h2 class="am-text-center am-padding-bottom-sm active">商品佩戴效果</h2>
+
+        <img src="{$contentInfo.dressedImage}" class="am-img-responsive am-center" alt="{$contentInfo.title}" />
+
+    </div>
+</section>
+
+
+<!--#include file="foot.html"-->

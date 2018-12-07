@@ -1,0 +1,52 @@
+
+<!--#include file="head.html"-->
+
+<!--#include file="header.html"-->
+
+<section class="class-list-top am-padding-sm">
+
+    <p class="am-margin-vertical-0 am-text-xs"><a href="__ROOT__/">首页</a><!--foreach{$crumb as $vo}--> &gt; <a href="{$vo.url}">{$vo.name}</a><!--{/foreach}--></p>
+
+</section>
+
+<hr class="grey" />
+
+<div class="class-list-container am-padding-sm">
+    <p class="article-title am-text-center am-margin-vertical-xs">{$contentInfo.title}</p>
+    <p class="article-time am-text-center am-margin-vertical-xs am-text-sm">时间：{date('Y-m-d H:i:s',$contentInfo.time)}</p>
+    <div class="article-box am-text-sm">{$contentInfo.content}</div>
+    <p class="am-text-right article-from am-text-sm am-margin-vertical-xs">来源：{$contentInfo.copyfrom}</p>
+
+    <ul class="am-avg-sm-1 am-padding-top-sm am-padding-bottom-sm am-text-sm">
+        <li>
+            <div class="am-text-truncate"><span>上一篇：</span>
+                <!--if{empty($prevInfo['aurl'])}-->
+                <a class="am-link-muted ">暂无</a>
+                <!--{else}-->
+                <a href="{$prevInfo.aurl}" class="am-link-muted">{$prevInfo.title}</a>
+                <!--{/if}-->
+            </div>
+        </li>
+        <li>
+
+            <div class="am-text-truncate"><span>下一篇：</span>
+                <!--if{empty($nextInfo['aurl'])}-->
+                <a class="am-link-muted">暂无</a>
+                <!--{else}-->
+                <a href="{$nextInfo.aurl}" class="am-link-muted">{$nextInfo.title}</a>
+                <!--{/if}-->
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+
+<hr class="grey" />
+
+<!--#include file="three_boxes.html"-->
+
+<!--#include file="footer.html"-->
+
+<!--#include file="foot.html"-->

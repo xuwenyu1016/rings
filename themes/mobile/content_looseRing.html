@@ -1,0 +1,94 @@
+
+<!--#include file="head.html"-->
+
+<!--#include file="header.html"-->
+
+<section class="product-tab">
+    <div data-am-widget="slider" class="am-slider am-slider-a2" data-am-slider='{"directionNav":false}'>
+        <ul class="am-slides">
+            <li data-thumb="{$contentInfo.image}">
+                <img src="{$contentInfo.image}">
+            </li>
+            <li data-thumb="{$contentInfo.productImg2}">
+                <img src="{$contentInfo.productImg2}">
+            </li>
+            <li data-thumb="{$contentInfo.productImg3}">
+                <img src="{$contentInfo.productImg3}">
+            </li>
+            <li data-thumb="{$contentInfo.productImg4}">
+                <img src="{$contentInfo.productImg4}">
+            </li>
+        </ul>
+    </div>
+
+    <hr class="grey" />
+
+    <article class="am-padding-horizontal-sm">
+
+        <p class="am-margin-vertical-xs"><b>{$contentInfo.title}</b></p>
+
+        <p class="am-margin-vertical-xs grey">¥{$contentInfo.priceNum}</p>
+
+        <ul class="am-avg-sm-2 border-bottom am-text-xs am-padding-bottom-xs">
+            <li class="am-margin-vertical-xs">证书：{$contentInfo.num}</li>
+            <li class="am-margin-vertical-xs">钻重：{$contentInfo.weight}</li>
+            <li class="am-margin-vertical-xs">颜色：{$contentInfo.colorNum}</li>
+            <li class="am-margin-vertical-xs">净度：{$contentInfo.clearNum}</li>
+        </ul>
+
+        <ul class="am-avg-sm-2 am-text-xs am-padding-vertical-xs">
+            <li class="am-margin-vertical-xs"><span>切工：</span><span>{$contentInfo.cutDegree}</span></li>
+            <li class="am-margin-vertical-xs"><span>抛光：</span><span>{$contentInfo.polish}</span></li>
+            <li class="am-margin-vertical-xs"><span>对称：</span><span>{$contentInfo.sym}</span></li>
+            <li class="am-margin-vertical-xs"><span>荧光：</span><span>{$contentInfo.fluo}</span></li>
+            <li class="am-margin-vertical-xs"><span>形状：</span><span>{$contentInfo.ringShape['list'][$contentInfo.ringShape['value'][0]] }</span></li>
+            <li class="am-margin-vertical-xs">&nbsp;</li>
+            <li class="am-margin-vertical-xs">&nbsp;</li>
+            <li class="am-margin-botttom-xs am-margin-top-sm">
+                <!--if{ $contentInfo.categoryName['list'][$contentInfo.categoryName['value'][0]] ==  'GIA'  }-->
+                <img src="/assets/image/122.png" class="am-img-responsive am-fr">
+                <!--{else}-->
+                <img src="/assets/image/123.png" class="am-img-responsive am-fr">
+                <!--{/if}-->
+            </li>
+        </ul>
+
+    </article>
+
+</section>
+
+<hr class="grey" />
+
+<section class="product-ring-interest am-padding-top-sm">
+
+    <div class="title-withline"><span>你可能感兴趣的产品</span></div>
+
+    <div class="grey-block transparent am-padding-horizontal-xs am-padding-vertical-sm">
+
+        <div class="loose-ring-block">
+            <!--list{app="Article" label="contentList" class_id=9 expand_id=4 limit="10" order="views desc"   }-->
+
+            <p class="ring-block-line am-text-xs am-padding-xs am-margin-vertical-sm">
+                <a href="{$list.aurl}">
+                    <span>{$contentInfo.ringShape['list'][$contentInfo.ringShape['value'][0]] }</span>|<span>钻重 {$list.weight}</span>|
+                    <span>颜色 {$list.colorNum}</span>|<span>净度 {$list.clearNum}</span>|<span class="red">会员价 ¥{$list.priceNum}</span>
+                </a>
+            </p>
+            <!--{/list}-->
+
+        </div>
+        <a href="/list-jiezhi.html" class="am-center more-products"> 查看更多 >> </a>
+
+
+    </div>
+
+</section>
+
+
+<hr class="grey" />
+
+<!--#include file="three_boxes.html"-->
+
+<!--#include file="footer.html"-->
+
+<!--#include file="foot.html"-->

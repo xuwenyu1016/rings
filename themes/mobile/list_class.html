@@ -1,0 +1,53 @@
+
+<!--#include file="head.html"-->
+
+<!--#include file="header.html"-->
+
+<section class="class-list-top am-padding-sm">
+
+    <p class="am-margin-top-0 am-margin-bottom-sm am-text-xs"><a href="__ROOT__/">首页</a><!--foreach{$crumb as $vo}--> &gt; <a href="{$vo.url}">{$vo.name}</a><!--{/foreach}--></p>
+
+    <ul class="am-avg-sm-5">
+        <!--foreach{$condition as $vo}-->
+        <li>
+            <a href="{$vo.url}" class="select-all <!--if{$vo.value==="all"}-->  selected <!--{/if}--> ">全部文章</a>
+        </li>
+
+        <!--foreach{$vo.config as $v}-->
+        <li>
+            <a <!--if{$v.value == $v.i}--> class="selected" <!--{/if}--> href="{$v.url}">{$v.name}</a>
+        </li>
+        <!--{/foreach}-->
+
+        <!--{/foreach}-->
+    </ul>
+</section>
+
+<hr class="grey" />
+
+<div class="class-list-container">
+    <!--foreach{$pageList as $vo}-->
+    <a href="{$vo.aurl}" class="news-box am-padding-horizontal-sm am-margin-vertical-sm">
+        <img src="{$vo.image}" alt="{$vo.title}" class="am-img-responsive" />
+
+        <div class="news-content am-padding-left-sm">
+            <p class="am-text-truncate am-margin-vertical-0 am-text-sm">{$vo.title}</p>
+            <p class="am-text-truncate am-margin-vertical-0 am-text-xs">{$vo.description}</p>
+
+        </div>
+    </a>
+    <!--{/foreach}-->
+
+    <div class="pagination am-padding-horizontal-sm am-padding-bottom-sm am-text-sm">{$page}</div>
+
+</div>
+
+
+
+<hr class="grey" />
+
+<!--#include file="three_boxes.html"-->
+
+<!--#include file="footer.html"-->
+
+<!--#include file="foot.html"-->
